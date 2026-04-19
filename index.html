@@ -116,19 +116,28 @@
       font-weight: 700;
       color: var(--brand);
       letter-spacing: -0.5px;
+      white-space: nowrap;
+      flex-shrink: 0;
     }
     .nav-links {
       display: flex;
-      gap: 8px;
+      gap: 4px;
+      flex-wrap: nowrap;
     }
     .nav-links a {
-      padding: 10px 16px;
+      padding: 8px 12px;
       border-radius: 24px;
       font-size: 14px;
       font-weight: 500;
       transition: background 0.15s;
+      white-space: nowrap;
     }
     .nav-links a:hover { background: var(--light); }
+    @media (max-width: 480px) {
+      .logo { font-size: 17px; }
+      .nav-links a { padding: 6px 8px; font-size: 12px; }
+      .nav-links a.hide-mobile { display: none; }
+    }
 
     /* ── HERO ── */
     .hero {
@@ -538,9 +547,9 @@
     <div class="logo">The Historic Stables</div>
     <nav class="nav-links">
       <a href="#photos">Photos</a>
-      <a href="#amenities">Amenities</a>
-      <a href="#reviews">Reviews</a>
-      <a href="#location">Location</a>
+      <a href="#amenities" class="hide-mobile">Amenities</a>
+      <a href="#reviews" class="hide-mobile">Reviews</a>
+      <a href="#location" class="hide-mobile">Location</a>
       <a href="#contact">Contact</a>
     </nav>
   </div>
